@@ -1,0 +1,35 @@
+version : '3.5'
+
+networks :
+  localdev :
+      name : localhost
+      
+      
+services :
+    api_forcast :
+       container_name : abanoub-labeeb-microservicewebapi-forecast-container
+       image          : abanoub-labeeb/microservicewebapi-forecast
+       build          : MicroServiceWebApi/
+       restart        : always
+       ports          :  
+            - "44442:44366"       
+       networks :
+            - localdev  
+     ocelot :
+       build      : OcelotApiGateway/
+       restart    : always
+       ports      :  
+            - "44441:83"       
+       depends_on :
+            - api-forcast
+            - api-predict
+       networks :
+            - localdev      
+
+    api-predict :
+       build      : MicroServiceWebApiV2/
+       ports      :  
+            - "44443:44352"       
+       networks :
+            - localdev             
+    

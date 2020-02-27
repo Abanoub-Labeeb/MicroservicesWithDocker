@@ -1,0 +1,40 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/weatherforecast",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44366
+        }
+      ],
+      "UpstreamPathTemplate": "/weatherforecast",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "Key": "weatherforecasting"
+    },
+    {
+      "DownstreamPathTemplate": "/api/weatherpredict",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44348
+        }
+      ],
+      "UpstreamPathTemplate": "/weatherpredict",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET" ],
+      "Key": "weatherpredicting"
+    }
+  ],
+  "Aggregates": [
+    {
+      "ReRouteKeys": [
+        "weatherforecasting",
+        "weatherpredicting"
+      ],
+      "UpstreamPathTemplate": "/weatherforecastmultipleservicecall"
+    }
+  ]
+  
+}

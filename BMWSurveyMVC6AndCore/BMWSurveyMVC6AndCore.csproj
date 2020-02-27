@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="9.0.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGenerators.MVC" Version="3.1.1" />
+    <PackageReference Include="Ocelot" Version="14.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BMWSurveyCustomWork\DependencyInjection\Services\" />
+    <Folder Include="BMWSurveyCustomWork\Dto\ModelDtosMapping\" />
+    <Folder Include="BMWSurveyCustomWork\Dto\ModelDtos\" />
+    <Folder Include="BMWSurveyCustomWork\Dto\" />
+    <Folder Include="BMWSurveyCustomWork\Helpers\" />
+    <Folder Include="BMWSurveyCustomWork\Configuration\" />
+    <Folder Include="BMWSurveyCustomWork\ViewModels\" />
+    <Folder Include="ModelsDtos\" />
+    <Folder Include="BMWSurveyCustomWork\ApplicationContext\" />
+    <Folder Include="_ChartFiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PS.Data\PS.Data.csproj" />
+    <ProjectReference Include="..\PS.Repo\PS.Repo.csproj" />
+    <ProjectReference Include="..\PS.Service\PS.Service.csproj" />
+  </ItemGroup>
+
+
+
+</Project>
