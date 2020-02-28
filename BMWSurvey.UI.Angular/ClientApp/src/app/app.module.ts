@@ -32,6 +32,9 @@ import { DeleteDialogComponent } from './BMWSurvey/dialogs/delete/delete.dialog.
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { DataService } from '../app/BMWSurvey/Services/data.service';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -68,6 +71,9 @@ import { DataService } from '../app/BMWSurvey/Services/data.service';
     MatSortModule,
     MatToolbarModule,
     ReactiveFormsModule,
+    MatTabsModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [SurveyCollectAnalyseService, Survey, DataService],
   bootstrap: [AppComponent],

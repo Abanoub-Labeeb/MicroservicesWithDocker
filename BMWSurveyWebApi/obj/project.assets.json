@@ -8339,19 +8339,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alabeeb\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\BMWSurveyWebApi\\BMWSurvey.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\BMWSurveyWebApi\\BMWSurvey.WebAPI.csproj",
       "projectName": "BMWSurvey.WebAPI",
-      "projectPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\BMWSurveyWebApi\\BMWSurvey.WebAPI.csproj",
-      "packagesPath": "C:\\Users\\alabeeb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\BMWSurveyWebApi\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\BMWSurveyWebApi\\BMWSurvey.WebAPI.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\BMWSurveyWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alabeeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8364,14 +8364,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\PS.Data\\PS.Data.csproj": {
-              "projectPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\PS.Data\\PS.Data.csproj"
+            "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\PS.Data\\PS.Data.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\PS.Data\\PS.Data.csproj"
             },
-            "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\PS.Repo\\PS.Repo.csproj": {
-              "projectPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\PS.Repo\\PS.Repo.csproj"
+            "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\PS.Repo\\PS.Repo.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\PS.Repo\\PS.Repo.csproj"
             },
-            "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\PS.Service\\PS.Service.csproj": {
-              "projectPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\PS.Service\\PS.Service.csproj"
+            "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\PS.Service\\PS.Service.csproj": {
+              "projectPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\PS.Service\\PS.Service.csproj"
             }
           }
         }

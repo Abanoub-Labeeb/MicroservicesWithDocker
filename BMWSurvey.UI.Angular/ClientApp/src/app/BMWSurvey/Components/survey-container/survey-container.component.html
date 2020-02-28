@@ -1,16 +1,16 @@
-<div class="jumbotron">
+
   <h1 class="display-4 text-center">BMW Survey</h1>
   <hr />
   <form (ngSubmit)="onSubmit()" #sform="ngForm" autocomplete="on">
-    <div class="row">
-      <div class="col-md-auto">
-        <app-survey [DataSource]="survey"></app-survey>
-      </div>
-    </div>
-    <div class="row">
-      <app-survey-model></app-survey-model>
-    </div>
-    <button type="submit" class="btn btn-success" [disabled]="!sform.form.valid">Submit</button>
+      <app-survey [DataSource]="survey"></app-survey>
+      <mat-tab-group>
+        <mat-tab label="BMW Models">
+          <ng-template matTabContent>
+            <app-survey-model></app-survey-model>
+          </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+      <button type="submit" class="btn btn-success" [disabled]="!sform.form.valid">Submit</button>    
   </form>
-</div>
+
 

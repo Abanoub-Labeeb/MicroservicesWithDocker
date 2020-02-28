@@ -1,14 +1,27 @@
-.check-box-h2 {
-  margin: 10px;
-}
-
-.check-box-section {
+.start-row {
   display: flex;
-  align-content: center;
+  flex-direction: row;
   align-items: center;
-  height: 60px;
+  align-content: center;
 }
 
-.check-box-margin {
-  margin: 0 10px;
+
+.start-Column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+
+mat-form-field {
+  max-height: 53px;
+  max-width:  180px;
+  margin : 0px 0px 6px 0px;
+}
+
+mat-checkbox {
+  min-height: 53px;
+  max-height: 53px;
+  min-width: 180px;  
 }

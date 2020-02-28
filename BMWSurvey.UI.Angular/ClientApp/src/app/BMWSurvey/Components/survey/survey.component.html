@@ -1,50 +1,51 @@
-<div class="form-group">
+<mat-grid-list cols="6" rowHeight="150px">
 
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Age</mat-label>
-      <input matInput placeholder="Age" #Age="ngModel" [(ngModel)]="ds.Age" required maxlength="50">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Gender</mat-label>
-      <input matInput placeholder="Gender" #Gender="ngModel" [(ngModel)]="ds.Gender" required maxlength="50">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <div class="input-group">
-    <section class="check-box-section">
-      <mat-checkbox class="check-box-margin" #OwnLicence="ngModel" [(ngModel)]="ds.OwnLicence">Own Licence</mat-checkbox>
-    </section>
-  </div>
-  <div class="input-group">
-    <section class="check-box-section">
-      <mat-checkbox class="check-box-margin" #FirstCar="ngModel" [(ngModel)]="ds.FirstCar">First Car</mat-checkbox>
-    </section>
-  </div>
-  <p>
-    <mat-form-field appearance="outline">
-      <mat-label>Drive Train</mat-label>
-      <input matInput placeholder="DriveTrain" #DriveTrain="ngModel" [(ngModel)]="ds.DriveTrain" required maxlength="50">
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
-    </mat-form-field>
-  </p>
-  <div class="input-group">
-    <section class="check-box-section">
-      <mat-checkbox class="check-box-margin" #Drifting="ngModel" [(ngModel)]="ds.Drifting" maxlength="50">Drifting</mat-checkbox>
-    </section>
-  </div>
-  <p>
-    <mat-form-field appearance="fill">
-      <mat-label>Number Of BMW</mat-label>
-      <input matInput type="number" class="example-right-align" #NumberOfBMWs="ngModel" [(ngModel)]="ds.NumberOfBMWs" required maxlength="50">
-      <span matPrefix>$&nbsp;</span>
-      <span matSuffix>.00</span>
-    </mat-form-field>
-  </p>
-</div>
+  <mat-grid-tile [colspan]="'2'"
+                   [rowspan]="'2'">
+      <div class="start-Column">
+        
+          <mat-form-field appearance="standard">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Age" #Age="ngModel" [(ngModel)]="ds.Age" required maxlength="50">
+          </mat-form-field>
+              
+          <mat-form-field appearance="standard">
+            <mat-label>Gender</mat-label>
+            <input matInput placeholder="Gender" #Gender="ngModel" [(ngModel)]="ds.Gender" required maxlength="50">
+          </mat-form-field>
+        
+          <mat-form-field appearance="standard">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="Gender" required maxlength="50">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint:Write a description</mat-hint>
+          </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="'2'"
+                   [rowspan]="'2'">
+      <div class="start-Column">
+            <mat-checkbox  #OwnLicence="ngModel" [(ngModel)]="ds.OwnLicence">Own Licence</mat-checkbox>
+            <mat-checkbox  #FirstCar="ngModel" [(ngModel)]="ds.FirstCar">First Car</mat-checkbox>
+            <mat-form-field appearance="standard">
+              <mat-label>Drive Train</mat-label>
+              <input matInput placeholder="DriveTrain" #DriveTrain="ngModel" [(ngModel)]="ds.DriveTrain" required maxlength="50">
+            </mat-form-field>
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="'2'"
+                   [rowspan]="'2'">
+      <div class="start-Column">
+
+        <mat-checkbox #Drifting="ngModel" [(ngModel)]="ds.Drifting">Drifting</mat-checkbox>
+        <mat-form-field appearance="standard">
+            <mat-label>Number Of BMW</mat-label>
+            <input matInput type="number" #NumberOfBMWs="ngModel" [(ngModel)]="ds.NumberOfBMWs" required maxlength="50">
+        </mat-form-field>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+

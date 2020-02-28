@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj": {}
+    "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj": {
+    "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj",
         "projectName": "MicroServiceWebAPI.WeatherForecast",
-        "projectPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj",
-        "packagesPath": "C:\\Users\\alabeeb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alabeeb\\source\\repos\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\MicroServiceWebAPI.WeatherForecast.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\Visual Studio 2019\\Projects\\BMWSurveyMVC6AndCore\\BMWSurveyMVC6AndCore\\MicroServiceWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\alabeeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
