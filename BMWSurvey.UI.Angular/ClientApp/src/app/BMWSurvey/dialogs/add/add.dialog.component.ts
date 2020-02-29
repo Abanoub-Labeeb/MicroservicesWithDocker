@@ -12,7 +12,7 @@ import {Issue} from '../../models/issue';
 
 export class AddDialogComponent {
 
-  constructor(public dialogRef: MatDialogRef<AddDialogComponent>,@Inject(MAT_DIALOG_DATA) public data: Issue,public dataService: DataService) { }
+  constructor(public dialogRef: MatDialogRef<AddDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: Issue, public dataService: DataService<Issue>) { }
 
   formControl = new FormControl('', [
     Validators.required
@@ -34,6 +34,6 @@ export class AddDialogComponent {
   }
 
   public confirmAdd(): void {
-    this.dataService.addIssue(this.data);
+    this.dataService.addDataRow(this.data);
   }
 }
