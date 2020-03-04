@@ -40,13 +40,13 @@ export class IssuesDataSource extends DataSource<Issue> {
   isLoadingResults = true;
   isRateLimitReached = false;
 
-  constructor(public httpClient: HttpClient,public _paginator: MatPaginator, public _sort: MatSort) {
+  constructor(public httpClient: HttpClient, public _paginator: MatPaginator, public _sort: MatSort) {
     super();
-
     this.dataService = new DataService<Issue>(this.httpClient, this.API_URL);
     // Reset to the first page when the user changes the filter.
     this._filterChange.subscribe(() => this._paginator.pageIndex = 0);
   }
+
 
   /** Connect function called by the table to retrieve one stream containing the data to render. */
   connect(): Observable<Issue[]> {

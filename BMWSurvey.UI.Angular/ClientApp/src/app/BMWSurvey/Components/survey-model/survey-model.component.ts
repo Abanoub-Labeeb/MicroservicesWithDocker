@@ -12,6 +12,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { FormControl, FormArray, FormGroup, Validators } from '@angular/forms';
 import { MatTable, MatHeaderCell, MatCell } from '@angular/material/table';
 import { AfterViewInit, HostListener} from '@angular/core';
+import { isNullOrUndefined } from 'util';
 
 @Component({
   selector: 'app-survey-model',
@@ -140,7 +141,23 @@ export class SurveyModelComponent implements OnInit {
   }
 
   public loadData() {
-    this.dataSource = new IssuesDataSource(this.httpClient,this.paginator, this.sort);
+    let columnConfig;
+
+
+    if (!isNullOrUndefined(this.dataSource)) {
+      columnConfig = this.dataSource.columns;
+    }
+
+    //in case of refresh we must render based on widths of old table
+    //  columnConfig = this.dataSource.columns;
+    this.dataSource = new IssuesDataSource(this.httpClient, this.paginator, this.sort);
+
+    if (!isNullOrUndefined(columnConfig)) {
+      this.dataSource.columns = columnConfig;
+      this.selection.clear();
+    }
+    
+
     fromEvent(this.filter.nativeElement, 'keyup')
       // .debounceTime(150)
       // .distinctUntilChanged()
@@ -265,22 +282,21 @@ export class SurveyModelComponent implements OnInit {
    // }
   }
 
-
-/**
+  /*
   setColumnWidth(column: any) {
     const columnEls = Array.from(document.getElementsByClassName('mat-column-' + column.columnDef));
     columnEls.forEach((el: HTMLDivElement) => {
       el.style.width = column.width + 'px';
     });
   }
-**/
+  */
 
   //used to execute function based on event happened in the client side 
-  /**
+  /*
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.setTableResize(this.matTableRef.nativeElement.clientWidth);
   }
-  **/
+  */
 }
 

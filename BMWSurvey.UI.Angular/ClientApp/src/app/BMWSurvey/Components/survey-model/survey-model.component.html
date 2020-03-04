@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
   <ng-container matColumnDef="actions">
-    <button mat-icon-button (click)="refresh()">
+    <button type="button" mat-icon-button (click)="refresh()">
       <mat-icon>refresh</mat-icon>
     </button>
-    <button mat-icon-button (click)="addNew()">
+    <button type="button" mat-icon-button (click)="addNew()">
       <mat-icon>add</mat-icon>
     </button>
     <!--
@@ -11,7 +11,7 @@
         <mat-icon>edit</mat-icon>
       </button>
     -->
-    <button mat-icon-button (click)="deleteItem()">
+    <button type="button" mat-icon-button (click)="deleteItem()">
       <mat-icon>delete</mat-icon>
     </button>
   </ng-container>
