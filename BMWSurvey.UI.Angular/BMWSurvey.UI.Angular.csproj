@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\BMWSurvey\DataSources\" />
+    <Folder Include="ClientApp\src\app\BMWSurvey\Services\DataServices\" />
+    <Folder Include="ClientApp\src\app\BMWSurvey\Services\ValidationServices\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

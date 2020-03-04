@@ -16,6 +16,6 @@ export class SurveyContainerComponent implements OnInit {
   }
 
   onSubmit() {
-    alert(this.survey.Age.toString());
+    console.log(this.survey.Age.toString());
   }
 }

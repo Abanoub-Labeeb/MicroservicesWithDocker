@@ -6,24 +6,26 @@
     <button mat-icon-button (click)="addNew()">
       <mat-icon>add</mat-icon>
     </button>
-    <button mat-icon-button (click)="startEdit()">
-      <mat-icon>edit</mat-icon>
-    </button>
+    <!--
+      <button mat-icon-button (click)="startEdit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    -->
     <button mat-icon-button (click)="deleteItem()">
       <mat-icon>delete</mat-icon>
     </button>
   </ng-container>
 </mat-toolbar>
 
-<div class="container mat-elevation-z8">
+<div class="mat-elevation-z8">
 
-  <div class="form">
+  <div class="filter-form">
     <mat-form-field floatPlaceholder="never" color="accent">
       <input matInput #filter placeholder="Filter issues">
     </mat-form-field>
   </div>
-
-  <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+  <!--mat-cell-->
+  <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" matSort cdkDropListGroup>
     <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
       <mat-header-cell *matHeaderCellDef>
@@ -39,15 +41,22 @@
         </mat-checkbox>
       </mat-cell>
     </ng-container>
-    <!-- Generic column definition -->
-    <div *ngFor="let column of dataSource.columns">
+    <div *ngFor="let column of dataSource.columns ; let i = index">
       <ng-container *ngIf="column.columnDef != 'select'" [matColumnDef]="column.columnDef">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>{{ column.header }}</mat-header-cell>
-        <mat-cell *matCellDef="let row" contenteditable="false">{{ column.cell(row) }}</mat-cell>
+        <mat-header-cell [ngStyle]="{'width.px': column.width}" *matHeaderCellDef (mousedown)="onResizeColumn($event, i)">
+        {{column.header}}
+        </mat-header-cell>
+        <mat-cell [ngStyle]="{'width.px': column.width}" *matCellDef="let row;let index = index" [matTooltip]="getToolTipData(row.number)" matTooltipPosition="left" [matTooltipDisabled]="(selection.isSelected(row))">
+          <mat-form-field>
+            <input  matInput [type]="column.type" [(ngModel)]="dataSource.dataService.dataRows.value[index][column.columnDef]" [value]="dataSource.dataService.dataRows.value[index][column.columnDef]" [disabled]="!(selection.isSelected(row))">
+          </mat-form-field>
+        </mat-cell>
       </ng-container>
     </div>
+
+
     <mat-header-row *matHeaderRowDef="dataSource.displayedColumns; sticky: true"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: dataSource.displayedColumns;" (click)="selection.toggle(row);"></mat-row>
+    <mat-row *matRowDef="let row; columns: dataSource.displayedColumns;"></mat-row>
 
   </mat-table>
 
@@ -56,11 +65,11 @@
     No results
   </div>
 
-  <mat-paginator #paginator
-                 [length]="dataSource.filteredData.length"
-                 [pageIndex]="0"
-                 [pageSize]="10"
-                 [pageSizeOptions]="[5, 10, 25, 100]"
-                 class="mat-paginator-sticky">
-  </mat-paginator>
 </div>
+<mat-paginator #paginator
+               [length]="dataSource.filteredData.length"
+               [pageIndex]="0"
+               [pageSize]="10"
+               [pageSizeOptions]="[5, 10, 25, 100]"
+               class="mat-paginator-sticky">
+</mat-paginator>

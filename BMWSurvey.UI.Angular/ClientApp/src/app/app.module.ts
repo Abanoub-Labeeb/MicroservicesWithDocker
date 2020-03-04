@@ -35,6 +35,7 @@ import { DataService } from '../app/BMWSurvey/Services/data.service';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     MatTabsModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   providers: [SurveyCollectAnalyseService, Survey, DataService],
   bootstrap: [AppComponent],

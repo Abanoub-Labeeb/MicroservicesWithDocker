@@ -5,20 +5,19 @@ import { MatSort } from '@angular/material/sort';
 import { Issue } from '../Models/issue';
 import { DataSource} from '@angular/cdk/collections';
 import { BehaviorSubject, fromEvent, merge, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { catchError, map, startWith, switchMap } from 'rxjs/operators';
 
 export class IssuesDataSource extends DataSource<Issue> {
 
   private readonly API_URL = 'https://api.github.com/repos/angular/angular/issues';
-  columns = [
-    { columnDef: 'select'    , header: 'select'    , cell: (issue: Issue) => `${issue.select}` , edited : false},
-    { columnDef: 'id'        , header: 'id.'       , cell: (issue: Issue) => `${issue.id}`     , edited: false},
-    { columnDef: 'title'     , header: 'title'     , cell: (issue: Issue) => `${issue.title}`  , edited: false},
-    { columnDef: 'state'     , header: 'state'     , cell: (issue: Issue) => `${issue.state}`  , edited: false },
-    { columnDef: 'url'       , header: 'url'       , cell: (issue: Issue) => `${issue.url}`    , edited: false },
-    { columnDef: 'created_at', header: 'created_at', cell: (issue: Issue) => `${issue.created_at}`, edited: false },
-    { columnDef: 'updated_at', header: 'updated_at', cell: (issue: Issue) => `${issue.updated_at}`, edited: false },
-    
+  columns: any[] = [
+    { columnDef: 'select', header: 'select', width: 100 , cell: (issue: Issue, index: number) => `${issue.select}`, type: 'text' },
+    { columnDef: 'id', header: 'id', width: 100, cell: (issue: Issue, index: number) => `${issue.id}`, type: 'number' },
+    { columnDef: 'title', header: 'title', width: 100, cell: (issue: Issue, index: number) => `${issue.title}`, type: 'text' },
+    { columnDef: 'state', header: 'state', width: 100, cell: (issue: Issue, index: number) => `${issue.state}`, type: 'text' },
+    { columnDef: 'url', header: 'url', width: 100, cell: (issue: Issue, index: number) => `${issue.url}`, type: 'text' },
+    { columnDef: 'created_at', header: 'created_at', width: 100, cell: (issue: Issue, index: number) => `${issue.created_at}`, type: 'text' },
+    { columnDef: 'updated_at', header: 'updated_at', width: 100, cell: (issue: Issue, index: number) => `${issue.updated_at}`, type: 'text' },    
   ];
 
   displayedColumns = this.columns.map(c => c.columnDef);
@@ -36,6 +35,10 @@ export class IssuesDataSource extends DataSource<Issue> {
 
   filteredData: Issue[] = [];
   renderedData: Issue[] = [];
+
+  resultsLength = 0;
+  isLoadingResults = true;
+  isRateLimitReached = false;
 
   constructor(public httpClient: HttpClient,public _paginator: MatPaginator, public _sort: MatSort) {
     super();
@@ -58,9 +61,12 @@ export class IssuesDataSource extends DataSource<Issue> {
     this.dataService.getAllDataRows();
 
 
-    return merge(...displayDataChanges).pipe(map(() => {
-      // Filter data
-      this.filteredData = this.dataService.data.slice().filter((issue: Issue) => {
+    return merge(...displayDataChanges)
+
+      .pipe(
+      map(() => {
+        // Filter data
+        this.filteredData = this.dataService.data.slice().filter((issue: Issue) => {
         const searchStr = (issue.id + issue.title + issue.url + issue.created_at).toLowerCase();
         return searchStr.indexOf(this.filter.toLowerCase()) !== -1;
       });
